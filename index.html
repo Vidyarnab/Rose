@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Siddhi ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #3b1029, #100512);
+    font-family: Georgia, serif;
+}
+
+.scene {
+    position: relative;
+    text-align: center;
+}
+
+.rose {
+    position: relative;
+    width: 230px;
+    height: 320px;
+    transform: scale(0);
+    animation: grow 3s ease-out forwards;
+}
+
+.flower {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    top: 0;
+    left: 30px;
+    transform: scale(0.1);
+    animation: bloom 2s ease-out 1.5s forwards;
+}
+
+.petal {
+    position: absolute;
+    width: 75px;
+    height: 100px;
+    border-radius: 50% 50% 40% 40%;
+    background: linear-gradient(135deg, #ff668b, #b90036, #5e001c);
+    box-shadow: 0 0 18px #ff174f;
+    top: 30px;
+    left: 48px;
+    transform-origin: bottom center;
+}
+
+.petal:nth-child(1) { transform: rotate(0deg) translateY(-25px); }
+.petal:nth-child(2) { transform: rotate(60deg) translateY(-25px); }
+.petal:nth-child(3) { transform: rotate(120deg) translateY(-25px); }
+.petal:nth-child(4) { transform: rotate(180deg) translateY(-25px); }
+.petal:nth-child(5) { transform: rotate(240deg) translateY(-25px); }
+.petal:nth-child(6) { transform: rotate(300deg) translateY(-25px); }
+
+.center {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #ffb0c5, #a00035);
+    border-radius: 50%;
+    top: 75px;
+    left: 55px;
+    z-index: 5;
+    box-shadow: 0 0 20px #ff759c;
+}
+
+.stem {
+    position: absolute;
+    height: 160px;
+    width: 9px;
+    background: linear-gradient(to right, #145c24, #56c75b);
+    top: 135px;
+    left: 110px;
+    border-radius: 20px;
+}
+
+.leaf {
+    position: absolute;
+    width: 65px;
+    height: 30px;
+    background: linear-gradient(45deg, #145c24, #65d86c);
+    border-radius: 100% 0 100% 0;
+}
+
+.leaf.one {
+    top: 190px;
+    left: 50px;
+    transform: rotate(15deg);
+}
+
+.leaf.two {
+    top: 235px;
+    left: 112px;
+    transform: rotate(190deg);
+}
+
+.message {
+    color: white;
+    font-size: 27px;
+    font-weight: bold;
+    text-shadow: 0 0 15px #ff4d87, 0 0 30px #ff0055;
+    opacity: 0;
+    animation: showText 2s ease 4s forwards;
+    margin-top: 15px;
+}
+
+.subtitle {
+    color: #ffc3d5;
+    font-size: 15px;
+    opacity: 0;
+    animation: showText 2s ease 5.5s forwards;
+    margin-top: 12px;
+}
+
+.heart {
+    position: absolute;
+    color: #ff5b91;
+    font-size: 22px;
+    animation: float 5s linear infinite;
+    opacity: 0;
+}
+
+@keyframes grow {
+    to { transform: scale(1); }
+}
+
+@keyframes bloom {
+    to { transform: scale(1); }
+}
+
+@keyframes showText {
+    to { opacity: 1; }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    20% { opacity: 1; }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+
+    <div class="rose">
+
+        <div class="flower">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+
+        <div class="stem"></div>
+        <div class="leaf one"></div>
+        <div class="leaf two"></div>
+
+    </div>
+
+    <div class="message">Love U Siddhi ❤️</div>
+    <div class="subtitle">You are my favourite person 🌹</div>
+
+</div>
+
+<script>
+for (let i = 0; i < 25; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "♥";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDelay = Math.random() * 5 + "s";
+    heart.style.animationDuration = (4 + Math.random() * 5) + "s";
+    document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
